@@ -1,11 +1,577 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <Layout>
-	<Welcome />
+	<header class="main-header">
+		<div class="logo">
+			<a href="/">
+				<span class="font-black uppercase text-2xl">
+					<small>Crea-Tive</small>
+				</span>
+			</a>
+		</div>
+		<nav class="main-nav">
+			<a href="/features">Features</a>
+			<a href="/pricing">Pricing</a>
+			<a href="/about">About</a>
+		</nav>
+		<a href="/signup" class="header-cta">Sign Up</a>
+	</header>
+	<section class="hero">
+		<div class="hero-content">
+			<h1 class="title">Build Your Next Big Thing</h1>
+			<p class="subtitle">
+				Our platform helps you build, launch, and scale your applications faster than ever before.
+			</p>
+			<a href="/get-started" class="cta-button">Get Started for Free</a>
+		</div>
+		<div class="hero-image">
+			<!-- You can place an image or illustration here -->
+			<img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80" alt="Marketing illustration of people working" />
+		</div>
+	</section>
+	<section class="features-section">
+		<div class="features-container">
+			<h2 class="section-title">Everything You Need to Succeed</h2>
+			<p class="section-subtitle">A single platform to build, manage, and grow your business.</p>
+			<div class="features-grid">
+				<div class="feature-item">
+					<div class="feature-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+						</svg>
+					</div>
+					<h3 class="feature-title">Powerful Analytics</h3>
+					<p class="feature-description">Get detailed insights into your performance and make data-driven decisions.</p>
+				</div>
+				<div class="feature-item">
+					<div class="feature-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.696a8.25 8.25 0 01-11.667 0l-3.181 3.183" />
+						</svg>
+					</div>
+					<h3 class="feature-title">Seamless Integration</h3>
+					<p class="feature-description">Connect with your favorite tools and services with just a few clicks.</p>
+				</div>
+				<div class="feature-item">
+					<div class="feature-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+					</div>
+					<h3 class="feature-title">24/7 Support</h3>
+					<p class="feature-description">Our dedicated support team is always available to help you out.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="service-preview-section">
+		<div class="service-preview-container">
+			<div class="preview-image">
+				<img
+					src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+					alt="Dashboard preview showing charts and tasks"
+				/>
+			</div>
+			<div class="preview-content">
+				<h2 class="section-title">Visualize Your Workflow</h2>
+				<p class="section-subtitle">
+					See your entire pipeline at a glance. Our intuitive dashboard makes it easy to track
+					progress, identify bottlenecks, and collaborate with your team in real-time.
+				</p>
+				<ul class="feature-list">
+					<li>Real-time status updates</li>
+					<li>Drag-and-drop task management</li>
+					<li>Customizable views and filters</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="testimonials-section">
+		<div class="testimonials-container">
+			<h2 class="section-title">Loved by Teams Everywhere</h2>
+			<p class="section-subtitle">
+				See what our customers are saying about their experience.
+			</p>
+			<div class="testimonials-grid">
+				<div class="testimonial-card">
+					<p class="testimonial-text">
+						"This platform has been a game-changer for our team. The features are intuitive and the support is top-notch. Highly recommended!"
+					</p>
+					<div class="testimonial-author">
+						<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80" alt="Author 1" class="author-avatar" />
+						<div class="author-info">
+							<p class="author-name">Sarah Johnson</p>
+							<p class="author-title">Marketing Director, TechCorp</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<p class="testimonial-text">
+						"I was able to get up and running in minutes. The seamless integration with our existing tools made the transition effortless."
+					</p>
+					<div class="testimonial-author">
+						<img src="https://images.unsplash.com/photo-1580852300654-03c803a15e75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Author 2" class="author-avatar" />
+						<div class="author-info">
+							<p class="author-name">Michael Chen</p>
+							<p class="author-title">Lead Developer, Innovate LLC</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<p class="testimonial-text">
+						"The analytics are incredibly powerful. We've been able to make much more informed decisions since we started using this product."
+					</p>
+					<div class="testimonial-author">
+						<img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Author 3" class="author-avatar" />
+						<div class="author-info">
+							<p class="author-name">Emily Rodriguez</p>
+							<p class="author-title">CEO, Startup Solutions</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="cta-section">
+		<div class="cta-container">
+			<h2 class="cta-title">Ready to Dive In?</h2>
+			<p class="cta-subtitle">Start your free trial today. No credit card required, no strings attached.</p>
+			<a href="/signup" class="cta-button-large">Get Started Now</a>
+		</div>
+	</section>
+	<footer class="main-footer">
+		<div class="footer-content">
+			<p class="copyright">
+				&copy; {new Date().getFullYear()} 
+				<span class="font-black uppercase text-md">
+					<small>Crea-Tive</small>
+				</span>. All rights reserved.
+			</p>
+			<div class="footer-links">
+				<a href="/privacy">Privacy</a>
+				<a href="/terms">Terms</a>
+				<a href="/contact">Contact</a>
+			</div>
+		</div>
+	</footer>
 </Layout>
+
+<style>
+	.main-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.logo a {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #111827;
+		text-decoration: none;
+	}
+
+	.main-nav {
+		display: none; /* Hidden on mobile */
+	}
+
+	.main-nav a {
+		text-decoration: none;
+		color: #374151;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.main-nav a:hover {
+		color: #232324;
+	}
+
+	.header-cta {
+		border: 1px solid #e5e7eb;
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		color: #374151;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		white-space: nowrap;
+	}
+
+	.header-cta:hover {
+		background-color: #f9fafb;
+	}
+
+	.hero {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4rem 2rem;
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.hero-content {
+		max-width: 50%;
+	}
+
+	.title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		color: #555;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background-color: #232324;
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		transition: background-color 0.3s ease;
+	}
+
+	.cta-button:hover {
+		background-color: #232324;
+	}
+
+	.hero-image img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.hero-content {
+			max-width: 100%;
+		}
+
+		.header-cta {
+			padding: 0.5rem 1rem;
+		}
+
+		.footer-content {
+			flex-direction: column-reverse;
+			gap: 1.5rem;
+		}
+
+		.service-preview-container {
+			flex-direction: column;
+			text-align: center;
+			gap: 2rem;
+		}
+
+		.preview-content .section-subtitle {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 600px;
+		}
+		.feature-list {
+			display: inline-flex;
+		}
+
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.main-nav {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.features-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.testimonials-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.features-section {
+		padding: 6rem 2rem;
+		text-align: center;
+	}
+
+	.features-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+
+	.section-subtitle {
+		font-size: 1.125rem;
+		color: #555;
+		max-width: 600px;
+		margin: 0 auto 4rem;
+	}
+
+	.features-grid {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.feature-item {
+		background-color: #f9fafb;
+		padding: 2rem;
+		border-radius: 0.5rem;
+		border: 1px solid #e5e7eb;
+	}
+
+	.feature-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		background-color: #e0e7ff;
+		color: #232324;
+		margin-bottom: 1.5rem;
+	}
+
+	.feature-icon svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	.feature-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.feature-description {
+		color: #6b7280;
+		line-height: 1.6;
+	}
+
+	.testimonials-section {
+		background-color: #f9fafb;
+		padding: 6rem 2rem;
+		text-align: center;
+	}
+
+	.testimonials-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		gap: 2rem;
+		margin-top: 4rem;
+	}
+
+	.testimonial-card {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 0.75rem;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.testimonial-text {
+		font-style: italic;
+		color: #374151;
+		line-height: 1.6;
+		margin: 0 0 1.5rem 0;
+	}
+
+	.testimonial-author {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-top: auto;
+	}
+
+	.author-avatar {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.author-name {
+		font-weight: 600;
+		color: #111827;
+		margin: 0;
+	}
+
+	.author-title {
+		font-size: 0.875rem;
+		color: #6b7280;
+		margin: 0;
+	}
+
+	.service-preview-section {
+		padding: 0 2rem 6rem;
+	}
+
+	.service-preview-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		gap: 4rem;
+	}
+
+	.preview-image {
+		flex: 1;
+	}
+
+	.preview-image img {
+		width: 100%;
+		height: auto;
+		border-radius: 0.75rem;
+		box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	}
+
+	.preview-content {
+		flex: 1;
+	}
+
+	.preview-content .section-subtitle {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: none;
+		margin-bottom: 2rem;
+	}
+
+	.feature-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.feature-list li {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		color: #374151;
+	}
+
+	.feature-list li::before {
+		content: '✓';
+		color: #232324;
+		font-weight: 700;
+	}
+
+	.main-footer {
+		background-color: #f9fafb;
+		padding: 2rem;
+		border-top: 1px solid #e5e7eb;
+		margin-top: 4rem;
+	}
+
+	.footer-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.footer-links a {
+		color: #6b7280;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer-links a:hover {
+		color: #111827;
+	}
+
+	.copyright {
+		color: #6b7280;
+		font-size: 0.875rem;
+		margin: 0;
+	}
+
+	.cta-section {
+		background: #232324;
+		color: white;
+		padding: 5rem 2rem;
+		text-align: center;
+		border-radius: 0.75rem;
+		max-width: 1200px;
+		margin: 6rem auto 0;
+	}
+
+	.cta-container {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.cta-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		color: white;
+	}
+
+	.cta-subtitle {
+		font-size: 1.125rem;
+		margin-bottom: 2.5rem;
+		opacity: 0.9;
+		color: #e0e7ff;
+	}
+
+	.cta-button-large {
+		display: inline-block;
+		background-color: white;
+		color: #232324;
+		padding: 1.25rem 2.5rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 700;
+		transition: all 0.3s ease;
+		font-size: 1.125rem;
+	}
+
+	.cta-button-large:hover {
+		background-color: #eef2ff;
+		transform: translateY(-2px);
+	}
+</style>

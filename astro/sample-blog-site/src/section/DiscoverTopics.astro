@@ -1,0 +1,72 @@
+---
+const tags = [
+	{ name: 'AI Technology', slug: 'ai-technology' },
+	{ name: 'Crypto', slug: 'crypto' },
+	{ name: 'Fintech', slug: 'fintech' },
+	{ name: 'Bitcoin', slug: 'bitcoin' },
+	{ name: 'Market Analyst', slug: 'market-analyst' },
+];
+---
+<style>
+    /* Skeleton Loading Styles */
+    @keyframes pulse-bg {
+        50% {
+            background-color: #d4d4d8; /* zinc-300 */
+        }
+    }
+    .skeleton {
+        background-color: #e4e4e7; /* zinc-200 */
+        border-radius: 0.25rem;
+        animation: pulse-bg 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .discover-topics-section.is-loading .content-wrapper {
+        display: none;
+    }
+    .discover-topics-section:not(.is-loading) .skeleton-wrapper {
+        display: none;
+    }
+</style>
+
+<section class="discover-topics-section flex flex-col md:flex-row justify-between items-center w-full py-16 md:py-24 px-4 md:px-16 is-loading">
+    <!-- Skeleton Loader -->
+    <div class="skeleton-wrapper w-full flex flex-col md:flex-row justify-between items-center">
+        <div class="text-left mb-12 md:mb-0 max-w-sm w-full">
+            <div class="skeleton h-12 w-3/4 mb-4"></div>
+            <div class="skeleton h-6 w-full"></div>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-4">
+            {Array(5).fill(0).map(() => (
+                <div class="skeleton h-10 w-28 rounded-full"></div>
+            ))}
+        </div>
+    </div>
+
+    <!-- Real Content -->
+    <div class="content-wrapper w-full flex flex-col md:flex-row justify-between items-center">
+        <div class="text-left mb-12 md:mb-0 animate-fade-in-up max-w-sm">
+            <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Discover Topics</h2>
+            <p class="text-lg text-zinc-600 mt-2 max-w-2xl mx-auto">Explore our most popular categories and find what interests you.</p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+            {
+                tags.map((tag) => (
+                    <a href={`/tags/${tag.slug}`} class="bg-zinc-200/50 text-zinc-700 font-medium py-2 px-5 rounded-full hover:bg-zinc-300/50 hover:text-zinc-900 transition-colors duration-300">
+                        {tag.name}
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const section = document.querySelector('.discover-topics-section');
+        if (!section) return;
+
+        // Simulate content loading
+        setTimeout(() => {
+            section.classList.remove('is-loading');
+        }, 1500); // Adjust delay as needed
+    });
+</script>

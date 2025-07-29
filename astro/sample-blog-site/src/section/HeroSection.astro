@@ -1,0 +1,131 @@
+---
+const tags = [
+	{ name: 'AI Technology', slug: 'ai-technology' },
+	{ name: 'Crypto', slug: 'crypto' },
+	{ name: 'Fintech', slug: 'fintech' },
+	{ name: 'Bitcoin', slug: 'bitcoin' },
+	{ name: 'Market Analyst', slug: 'market-analyst' },
+];
+---
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+
+    .hero-background {
+        background-color: #f4f4f5; /* zinc-200 */
+        background-image: radial-gradient(#a1a1aa 1px, transparent 1px); /* zinc-400 dots */
+        background-size: 20px 20px;
+    }
+
+    .glitch {
+        position: relative;
+    }
+
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .glitch::before {
+        left: 3px;
+        text-shadow: -2px 0 #a1a1aa; /* zinc-400 */
+        animation: glitch-anim-1 3s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+        left: -3px;
+        text-shadow: 2px 0 #71717a; /* zinc-500 */
+        animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim-1 {
+        0% { clip-path: inset(15% 0 86% 0); }
+        25% { clip-path: inset(53% 0 8% 0); }
+        50% { clip-path: inset(95% 0 2% 0); }
+        75% { clip-path: inset(39% 0 62% 0); }
+        100% { clip-path: inset(72% 0 28% 0); }
+    }
+
+    @keyframes glitch-anim-2 {
+        0% { clip-path: inset(82% 0 14% 0); }
+        25% { clip-path: inset(19% 0 71% 0); }
+        50% { clip-path: inset(36% 0 59% 0); }
+        75% { clip-path: inset(69% 0 29% 0); }
+        100% { clip-path: inset(1% 0 95% 0); }
+    }
+
+    .marquee-x-container {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+
+    @keyframes marquee-x {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+    .marquee-x {
+        animation: marquee-x 30s linear infinite;
+    }
+</style>
+
+<section class="flex flex-col justify-center items-center w-full h-screen hero-background rounded-lg">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full h-screen m-auto py-8 px-4 md:px-12">
+        <h1
+            class="glitch text-5xl md:text-7xl font-black mb-4 md:mb-0 max-w-md uppercase tracking-tighter -space-y-2 animate-fade-in-up"
+            style="animation-delay: 0.2s;"
+            data-text="Creative Thoughts"
+        >
+            Creative Thoughts</h1>
+        <p
+            class="text-lg md:text-xl text-zinc-600 mb-8 md:mb-0 max-w-sm animate-fade-in-up"
+            style="animation-delay: 0.4s;"
+        >
+            A journey through design, development, and the creative spaces in between.
+        </p>
+        <a href="/blog" class="bg-zinc-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-zinc-700 transition-colors animate-fade-in-up" style="animation-delay: 0.6s;">
+            Explore Posts
+        </a>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full py-16 md:py-24 px-4 md:px-12">
+        <div class="text-left mb-12 md:mb-0 animate-fade-in-up max-w-sm">
+            <h2 class="uppercase text-4xl md:text-xl font-black tracking-tighter md:px-8">Hot Topics</h2>
+        </div>
+        <div class="marquee-x-container relative w-full max-w-lg overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="marquee-x flex min-w-full flex-shrink-0 flex-row items-center space-x-4 pr-4">
+                <!-- Render tags twice for seamless loop -->
+                {tags.map((tag) => (
+                    <a href={`/tags/${tag.slug}`} class="flex-shrink-0 bg-zinc-200/50 text-zinc-700 font-medium py-2 px-5 rounded-full hover:bg-zinc-300/50 hover:text-zinc-900 transition-colors duration-300">
+                        {tag.name}
+                    </a>
+                ))}
+                {tags.map((tag) => (
+                    <a href={`/tags/${tag.slug}`} class="flex-shrink-0 bg-zinc-200/50 text-zinc-700 font-medium py-2 px-5 rounded-full hover:bg-zinc-300/50 hover:text-zinc-900 transition-colors duration-300" aria-hidden="true">
+                        {tag.name}
+                    </a>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

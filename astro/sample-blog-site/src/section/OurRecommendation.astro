@@ -1,0 +1,213 @@
+---
+
+---
+<style>
+	/* Skeleton Loading Styles */
+	@keyframes pulse-bg {
+		50% {
+			background-color: #d4d4d8; /* zinc-300 */
+		}
+	}
+	.skeleton {
+		background-color: #e4e4e7; /* zinc-200 */
+		border-radius: 0.25rem;
+		animation: pulse-bg 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+	.recommendation-section.is-loading .content-wrapper {
+		display: none;
+	}
+	.recommendation-section:not(.is-loading) .skeleton-wrapper {
+		display: none;
+	}
+	.slider-container-recommendation {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+	.slider-wrapper-recommendation {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+	}
+	.slide-recommendation {
+		flex-shrink: 0;
+		width: 100%;
+		padding: 0 0.5rem;
+	}
+	.slider-nav-btn-recommendation {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		background-color: #ffffff;
+		color: #18181b;
+		width: 44px;
+		height: 44px;
+		border-radius: 9999px;
+		transition: background-color 0.3s, opacity 0.3s;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border: 1px solid #e4e4e7;
+	}
+	.slider-nav-btn-recommendation:hover {
+		background-color: #f4f4f5;
+	}
+	.slider-nav-btn-recommendation:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+	#prev-btn-recommendation {
+		left: 1.5rem;
+	}
+	#next-btn-recommendation {
+		right: 1.5rem;
+	}
+	@media (max-width: 768px) {
+		#prev-btn-recommendation,
+		#next-btn-recommendation {
+			top: 25%; /* Adjust for better positioning on mobile */
+		}
+	}
+</style>
+
+<section class="recommendation-section w-full py-16 md:py-8 px-4 md:px-12 is-loading">
+	<!-- Skeleton Loader -->
+	<div class="skeleton-wrapper">
+		<div class="grid md:grid-cols-2 gap-12 items-center bg-white/50 backdrop-blur-sm border border-zinc-200/50 rounded-lg shadow-sm p-8 md:p-12">
+			<div class="skeleton h-80 w-full rounded-md"></div>
+			<div>
+				<div class="skeleton h-4 w-1/4 mb-4"></div>
+				<div class="skeleton h-10 w-3/4 mb-6"></div>
+				<div class="skeleton h-5 w-full mb-2"></div>
+				<div class="skeleton h-5 w-full mb-2"></div>
+				<div class="skeleton h-5 w-2/3 mb-8"></div>
+				<div class="flex items-center gap-4 mb-8">
+					<div class="skeleton w-12 h-12 rounded-full"></div>
+					<div class="w-full">
+						<div class="skeleton h-5 w-1/3 mb-2"></div>
+						<div class="skeleton h-4 w-1/4"></div>
+					</div>
+				</div>
+				<div class="skeleton h-12 w-40 rounded-lg"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Real Content -->
+	<div class="content-wrapper">
+		<div class="slider-container-recommendation">
+			<div class="slider-wrapper-recommendation">
+				<!-- Slide 1 -->
+				<div class="slide-recommendation">
+					<div class="grid md:grid-cols-2 gap-12 items-center bg-white/50 backdrop-blur-sm border border-zinc-200/50 rounded-lg shadow-sm p-8 md:p-12">
+						<div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+							<a href="#" class="block rounded-lg overflow-hidden group">
+								<img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=1170&auto=format&fit=crop" alt="A person writing in a journal" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-md" />
+							</a>
+						</div>
+						<div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+							<span class="text-sm font-bold uppercase text-zinc-500">Our Recommendation</span>
+							<h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-4 mb-6">Finding Your Creative Voice</h2>
+							<p class="text-lg text-zinc-600 mb-8">Discover the techniques and mindsets that help you break through creative blocks and develop a unique style that is truly your own.</p>
+							<div class="flex items-center gap-4 mb-8">
+								<img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop" alt="Author avatar" />
+								<div>
+									<p class="font-bold text-zinc-800">Jane Doe</p>
+									<p class="text-sm text-zinc-500">Lead Creative</p>
+								</div>
+							</div>
+							<a href="#" class="bg-zinc-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-zinc-700 transition-colors"> Read Full Story </a>
+						</div>
+					</div>
+				</div>
+				<!-- Slide 2 -->
+				<div class="slide-recommendation">
+					<div class="grid md:grid-cols-2 gap-12 items-center bg-white/50 backdrop-blur-sm border border-zinc-200/50 rounded-lg shadow-sm p-8 md:p-12">
+						<div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+							<a href="#" class="block rounded-lg overflow-hidden group">
+								<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1171&auto=format&fit=crop" alt="People collaborating on a project" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 rounded-md" />
+							</a>
+						</div>
+						<div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+							<span class="text-sm font-bold uppercase text-zinc-500">Our Recommendation</span>
+							<h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-4 mb-6">The Power of Collaboration</h2>
+							<p class="text-lg text-zinc-600 mb-8">Learn how effective teamwork and shared creativity can lead to groundbreaking innovations and successful projects.</p>
+							<div class="flex items-center gap-4 mb-8">
+								<img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Author avatar" />
+								<div>
+									<p class="font-bold text-zinc-800">John Smith</p>
+									<p class="text-sm text-zinc-500">Project Manager</p>
+								</div>
+							</div>
+							<a href="#" class="bg-zinc-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-zinc-700 transition-colors"> Read Full Story </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Slider Navigation -->
+		<div class="slider-nav-btn-recommendation" id="prev-btn-recommendation" aria-label="Previous slide">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+		</div>
+		<div class="slider-nav-btn-recommendation" id="next-btn-recommendation" aria-label="Next slide">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+		</div>
+	</div>
+</section>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const section = document.querySelector('.recommendation-section');
+		if (!section) return;
+
+		// Simulate content loading
+		setTimeout(() => {
+			section.classList.remove('is-loading');
+
+			// Initialize slider after content is shown
+			const sliderContainer = section.querySelector('.slider-container-recommendation');
+			if (!sliderContainer) return;
+
+			const sliderWrapper = sliderContainer.querySelector('.slider-wrapper-recommendation');
+			const slides = Array.from(sliderContainer.querySelectorAll('.slide-recommendation'));
+			const prevBtn = document.getElementById('prev-btn-recommendation');
+			const nextBtn = document.getElementById('next-btn-recommendation');
+			const totalSlides = slides.length;
+
+			let currentIndex = 0;
+
+			function updateSliderPosition() {
+				sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+				updateButtons();
+			}
+
+			function updateButtons() {
+				prevBtn.disabled = currentIndex === 0;
+				nextBtn.disabled = currentIndex >= totalSlides - 1;
+			}
+
+			function showNextSlide() {
+				if (currentIndex < totalSlides - 1) {
+					currentIndex++;
+					updateSliderPosition();
+				}
+			}
+
+			function showPrevSlide() {
+				if (currentIndex > 0) {
+					currentIndex--;
+					updateSliderPosition();
+				}
+			}
+
+			function init() {
+				updateSliderPosition();
+				nextBtn.addEventListener('click', showNextSlide);
+				prevBtn.addEventListener('click', showPrevSlide);
+			}
+
+			init();
+		}, 1500); // Adjust delay as needed
+	});
+</script>
